@@ -1,34 +1,43 @@
-// China
+// USA
 export const locale = {
-  lang: 'ch',
+  lang: 'am',
   data: {
     TRANSLATOR: {
-      SELECT: '选择你的语言',
+      SELECT: 'Select your language',
+    },
+    SHEMETA: {
+      BUILDER: "Builder",
+      SIMULATOR: 'Simulator',
+      USER_DATA:"User Data",
+      CONFIG_USSD:"Config",
+      MESSAGE_TEMPLATE:"Message Template",
+      SENT_MESSAGES:"Sent Messages",
+      CONFIG_SMS:"Config",
     },
     MENU: {
-      NEW: '新',
-      ACTIONS: '行动',
-      CREATE_POST: '创建新帖子',
+      NEW: 'new',
+      ACTIONS: 'Actions',
+      CREATE_POST: 'Create New Post',
       PAGES: 'Pages',
-      FEATURES: '特征',
-      APPS: '应用',
-      DASHBOARD: '仪表板',
+      FEATURES: 'Features',
+      APPS: 'Apps',
+      DASHBOARD: 'Dashboard',
     },
     AUTH: {
       GENERAL: {
-        OR: '要么',
-        SUBMIT_BUTTON: '提交',
-        NO_ACCOUNT: '没有账号？',
-        SIGNUP_BUTTON: '注册',
-        FORGOT_BUTTON: '忘记密码',
-        BACK_BUTTON: '背部',
-        PRIVACY: '隐私',
-        LEGAL: '法律',
-        CONTACT: '联系',
+        OR: 'Or',
+        SUBMIT_BUTTON: 'Submit',
+        NO_ACCOUNT: 'Don\'t have an account?',
+        SIGNUP_BUTTON: 'Sign Up',
+        FORGOT_BUTTON: 'Forgot Password',
+        BACK_BUTTON: 'Back',
+        PRIVACY: 'Privacy',
+        LEGAL: 'Legal',
+        CONTACT: 'Contact',
       },
       LOGIN: {
-        TITLE: '创建帐号',
-        BUTTON: '签到',
+        TITLE: 'Login Account',
+        BUTTON: 'Sign In',
       },
       FORGOT: {
         TITLE: 'Forgotten Password?',
@@ -45,7 +54,7 @@ export const locale = {
         FULLNAME: 'Fullname',
         PASSWORD: 'Password',
         CONFIRM_PASSWORD: 'Confirm Password',
-        USERNAME: '用戶名'
+        USERNAME: 'Username'
       },
       VALIDATION: {
         INVALID: '{{name}} is not valid',
@@ -76,8 +85,8 @@ export const locale = {
       },
       ECOMMERCE: 'eCommerce',
       CUSTOMERS: {
-        CUSTOMERS: '顾客',
-        CUSTOMERS_LIST: '客户名单',
+        CUSTOMERS: 'Customers',
+        CUSTOMERS_LIST: 'Customers list',
         NEW_CUSTOMER: 'New Customer',
         DELETE_CUSTOMER_SIMPLE: {
           TITLE: 'Customer Delete',
