@@ -32,7 +32,7 @@ export class MenuConfig {
           root: true,
           icon: 'flaticon2-checkmark',
           page: '/dashboard',
-          translate: 'SHEMETA.TEST',
+          translate: 'SHEMETA.SIMULATOR',
           bullet: 'dot',
         },
         {

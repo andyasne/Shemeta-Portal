@@ -7,7 +7,7 @@ export const locale = {
     },
     SHEMETA: {
       BUILDER: "Builder",
-      TEST: 'Test',
+      SIMULATOR: 'Simulator',
       USER_DATA:"User Data",
       CONFIG_USSD:"Config",
       MESSAGE_TEMPLATE:"Message Template",
