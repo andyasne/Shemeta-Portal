@@ -1,7 +1,7 @@
 <div class="card card-custom bg-gray-100" [ngClass]="cssClasses">
 	<!-- Header -->
 	<div class="card-header border-0 bg-danger py-5">
-		<h3 class="card-title font-weight-bolder text-white">Sales Stat</h3>
+		<h3 class="card-title font-weight-bolder text-white">USSD Stat</h3>
 		<div class="card-toolbar">
 			<div ngbDropdown [placement]="'bottom-right'" class="dropdown dropdown-inline" title="Quick actions">
 				<a  ngbDropdownToggle
@@ -12,7 +12,7 @@
 				<div ngbDropdownMenu class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
 					<kt-dropdown2></kt-dropdown2>
 				</div>
-			</div>			
+			</div>
 		</div>
 	</div>
 	<!-- Body -->
@@ -24,7 +24,7 @@
             [chart]="chartOptions.chart"
             [xaxis]="chartOptions.xaxis"
             [yaxis]="chartOptions.yaxis"
-            [dataLabels]="chartOptions.dataLabels"            
+            [dataLabels]="chartOptions.dataLabels"
             [stroke]="chartOptions.stroke"
             [legend]="chartOptions.legend"
             [fill]="chartOptions.fill"

@@ -5,6 +5,15 @@ export const locale = {
     TRANSLATOR: {
       SELECT: 'Select your language',
     },
+    SHEMETA: {
+      BUILDER: "Builder",
+      TEST: 'Test',
+      USER_DATA:"User Data",
+      CONFIG_USSD:"Config",
+      MESSAGE_TEMPLATE:"Message Template",
+      SENT_MESSAGES:"Sent Messages",
+      CONFIG_SMS:"Config",
+    },
     MENU: {
       NEW: 'new',
       ACTIONS: 'Actions',
