@@ -5,9 +5,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { ShemetaRoutingModule } from './shemeta-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShemetaComponent } from './shemeta.component';
-import { BuilderComponent } from './ussd/builder/builder/builder.component';
-import { SimulatorComponent } from './ussd/builder/simulator/simulator.component';
+import { BuilderComponent } from './ussd/builder/builder.component';
+import { SimulatorComponent } from './ussd/simulator/simulator.component';
 import { UserDataComponent } from './ussd/user-data/user-data.component';
+import { UssdConfigComponent } from './ussd/ussd-config/ussd-config.component';
 
 const routes: Routes = [
 	{
@@ -28,18 +29,32 @@ const routes: Routes = [
 				path: 'builder',
 				component: BuilderComponent
 			}
+			,
+			{
+				path: 'simulator',
+				component: SimulatorComponent
+			}
+			,
+			{
+				path: 'user-data',
+				component: UserDataComponent
+			}
+			,
+			{
+				path: 'ussd-config',
+				component: UssdConfigComponent
+			}
+
 
 		]
 	}
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent],
+  declarations: [DashboardComponent, ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent],
   imports: [
     CommonModule,
-		 RouterModule.forChild(routes)
-
-    // ShemetaRoutingModule
+	 RouterModule.forChild(routes)
   ]
 })
 export class ShemetaModule { }
