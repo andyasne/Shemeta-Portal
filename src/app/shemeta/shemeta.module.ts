@@ -10,6 +10,7 @@ import { SimulatorComponent } from './ussd/simulator/simulator.component';
 import { UserDataComponent } from './ussd/user-data/user-data.component';
 import { UssdConfigComponent } from './ussd/ussd-config/ussd-config.component';
 import { USSDMenuDirective } from './directives/ussd-menu.directive';
+import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
 	{
@@ -52,7 +53,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective],
+  declarations: [DashboardComponent, ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, MenuComponent],
   imports: [
     CommonModule,
 	 RouterModule.forChild(routes)
