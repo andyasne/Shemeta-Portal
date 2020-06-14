@@ -33,6 +33,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ThemeModule } from './views/theme/theme.module';
+import { ShemetaModule } from './shemeta/shemeta.module'
 // Partials
 import { PartialsModule } from './views/partials/partials.module';
 // Layout Services
@@ -123,7 +124,8 @@ export function getHighlightLanguages() {
     TranslateModule.forRoot(),
     MatProgressSpinnerModule,
     InlineSVGModule.forRoot(),
-    ThemeModule
+    ThemeModule,
+    ShemetaModule
   ],
   exports: [],
   providers: [

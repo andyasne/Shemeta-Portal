@@ -15,9 +15,13 @@ const routes: Routes = [
     component: BaseComponent,
     canActivate: [AuthGuard],
     children: [
+      // {
+      //   path: 'dashboard',
+      //   loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+      // },
       {
-        path: 'dashboard',
-        loadChildren: () => import('./views/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+        path: 'shemeta',
+        loadChildren: () => import('./shemeta/shemeta.module').then(m => m.ShemetaModule),
       },
       {
         path: 'mail',
@@ -44,7 +48,7 @@ const routes: Routes = [
         loadChildren: () => import('./views/pages/wizard/wizard.module').then(m => m.WizardModule),
       },
       {
-        path: 'builder',
+        path: '_builder',
         loadChildren: () => import('./views/theme/content/builder/builder.module').then(m => m.BuilderModule),
       },
       {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
