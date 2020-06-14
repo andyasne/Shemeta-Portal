@@ -11,7 +11,7 @@ export class UsersTable {
       pic: './assets/media/users/300_14.jpg',
       fullname: 'Marcoon',
       occupation: 'CEO',
-      companyName: 'Keenthemes',
+      companyName: 'Shemeta',
       phone: '456669067890',
       address: {
         addressLine: 'L-12-20 Vertex, Cybersquare',
@@ -36,8 +36,8 @@ export class UsersTable {
       roles: [2], // Manager
       pic: './assets/media/users/100_2.jpg',
       fullname: 'Megan',
-      occupation: 'Deputy Head of Keenthemes in New York office',
-      companyName: 'Keenthemes',
+      occupation: 'Deputy Head of Shemeta in New York office',
+      companyName: 'Shemeta',
       phone: '456669067891',
       address: {
         addressLine: '3487  Ingram Road',
@@ -63,7 +63,7 @@ export class UsersTable {
       pic: './assets/media/users/default.jpg',
       fullname: 'Ginobili Maccari',
       occupation: 'CFO',
-      companyName: 'Keenthemes',
+      companyName: 'Shemeta',
       phone: '456669067892',
       address: {
         addressLine: '1467  Griffin Street',

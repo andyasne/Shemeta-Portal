@@ -12,7 +12,13 @@
             "type": "pwa-chrome",
             "webRoot": "${workspaceFolder}"
         },
-
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against localhost",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}"
+        },
         {
             "type": "pwa-node",
             "request": "launch",

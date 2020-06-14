@@ -21,7 +21,7 @@ export class StickyToolbarComponent {
   baseHref: string;
 
   constructor(private layoutConfigService: LayoutConfigService) {
-    this.baseHref = 'https://keenthemes.com/metronic/preview/angular/';
+    this.baseHref = 'https://Shemeta.com/metronic/preview/angular/';
   }
 
   isActiveDemo(demo) {
