@@ -1,0 +1,348 @@
+[
+    [
+        {
+            "_id": "0",
+            "menuElements": [
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d531f502945604c6ac51",
+                        "displayText": "5ee9d409f502945604c6ac4a",
+                        "selector": "",
+                        "order": 0,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d409f502945604c6ac4a",
+                        "english": "እንኳን በደህና መጡ!",
+                        "amharic": "እንኳን በደህና መጡ!",
+                        "afanOromo": "እንኳን በደህና መጡ!",
+                        "tigrigna": "እንኳን በደህና መጡ!",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d54ef502945604c6ac52",
+                        "displayText": "5ee9d44cf502945604c6ac4b",
+                        "selector": "1",
+                        "order": 1,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "__v": 0,
+                        "code": "1"
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d44cf502945604c6ac4b",
+                        "english": "1 መረጃ ለማስገባት",
+                        "amharic": "1 መረጃ ለማስገባት",
+                        "afanOromo": "1 መረጃ ለማስገባት",
+                        "tigrigna": "1 መረጃ ለማስገባት",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d563f502945604c6ac53",
+                        "displayText": "5ee9d465f502945604c6ac4c",
+                        "selector": "2",
+                        "order": 2,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "__v": 0,
+                        "code": "2"
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d465f502945604c6ac4c",
+                        "english": "2 መረጃ ለማግኘት ",
+                        "amharic": "2 መረጃ ለማግኘት ",
+                        "afanOromo": "2 መረጃ ለማግኘት ",
+                        "tigrigna": "2 መረጃ ለማግኘት ",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d66de5882c5bf0ce87d0",
+                        "displayText": "5ee9d494f502945604c6ac4d",
+                        "selector": "",
+                        "order": 0,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "3",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d494f502945604c6ac4d",
+                        "english": "0 ወደኋል ለመመለስ  ",
+                        "amharic": "0 ወደኋል ለመመለስ  ",
+                        "afanOromo": "0 ወደኋል ለመመለስ  ",
+                        "tigrigna": "0 ወደኋል ለመመለስ  ",
+                        "__v": 0
+                    }
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "_id": "1",
+            "menuElements": [
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d6c6e5882c5bf0ce87d1",
+                        "displayText": "5ee9d4b3f502945604c6ac4e",
+                        "selector": "1",
+                        "order": 1,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "4",
+                        "parentCode": "1",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d4b3f502945604c6ac4e",
+                        "english": "1 መኪና",
+                        "amharic": "1 መኪና",
+                        "afanOromo": "1 መኪና",
+                        "tigrigna": "1 መኪና",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d6e8e5882c5bf0ce87d2",
+                        "displayText": "5ee9d4d1f502945604c6ac4f",
+                        "selector": "2",
+                        "order": 2,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "5",
+                        "parentCode": "1",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d4d1f502945604c6ac4f",
+                        "english": "2  ቤት",
+                        "amharic": "2  ቤት",
+                        "afanOromo": "2  ቤት",
+                        "tigrigna": "2  ቤት",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d705e5882c5bf0ce87d3",
+                        "displayText": "5ee9d4f0f502945604c6ac50",
+                        "selector": "3",
+                        "order": 3,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "6",
+                        "parentCode": "1",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d4f0f502945604c6ac50",
+                        "english": "3 የግብርና ውጤት",
+                        "amharic": "3 የግብርና ውጤት",
+                        "afanOromo": "3 የግብርና ውጤት",
+                        "tigrigna": "3 የግብርና ውጤት",
+                        "__v": 0
+                    }
+                }
+            ]
+        }
+    ],
+    [
+        {
+            "_id": "4",
+            "menuElements": [
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9d9fde5882c5bf0ce87da",
+                        "displayText": "5ee9d80fe5882c5bf0ce87d4",
+                        "selector": "",
+                        "order": 0,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "8",
+                        "parentCode": "4",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d80fe5882c5bf0ce87d4",
+                        "english": "የመኪና ስም",
+                        "amharic": "የመኪና ስም",
+                        "afanOromo": "የመኪና ስም",
+                        "tigrigna": "የመኪና ስም",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9da11e5882c5bf0ce87db",
+                        "displayText": "5ee9d882e5882c5bf0ce87d5",
+                        "selector": "1",
+                        "order": 1,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "9",
+                        "parentCode": "4",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d882e5882c5bf0ce87d5",
+                        "english": "1. ቶዮታ",
+                        "amharic": "1. ቶዮታ",
+                        "afanOromo": "1. ቶዮታ",
+                        "tigrigna": "1. ቶዮታ",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9da2be5882c5bf0ce87dc",
+                        "displayText": "5ee9d8a1e5882c5bf0ce87d6",
+                        "selector": "2",
+                        "order": 2,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "10",
+                        "parentCode": "4",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d8a1e5882c5bf0ce87d6",
+                        "english": "2. ሆንዳ",
+                        "amharic": "2. ሆንዳ",
+                        "afanOromo": "2. ሆንዳ",
+                        "tigrigna": "2. ሆንዳ",
+                        "__v": 0
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "5",
+            "menuElements": [
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9daa0e5882c5bf0ce87dd",
+                        "displayText": "5ee9d912e5882c5bf0ce87d7",
+                        "selector": "",
+                        "order": 0,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "11",
+                        "parentCode": "5",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d912e5882c5bf0ce87d7",
+                        "english": "ቦታ",
+                        "amharic": "ቦታ",
+                        "afanOromo": "ቦታ",
+                        "tigrigna": "ቦታ",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9dab0e5882c5bf0ce87de",
+                        "displayText": "5ee9d92fe5882c5bf0ce87d8",
+                        "selector": "1",
+                        "order": 1,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "12",
+                        "parentCode": "5",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d92fe5882c5bf0ce87d8",
+                        "english": "1.  አዲስ አበባ",
+                        "amharic": "1.  አዲስ አበባ",
+                        "afanOromo": "1.  አዲስ አበባ",
+                        "tigrigna": "1.  አዲስ አበባ",
+                        "__v": 0
+                    }
+                },
+                {
+                    "menuItem": {
+                        "loadUserData": false,
+                        "readOnly": false,
+                        "exit": false,
+                        "_id": "5ee9dac3e5882c5bf0ce87df",
+                        "displayText": "5ee9d95ee5882c5bf0ce87d9",
+                        "selector": "2",
+                        "order": 2,
+                        "menuType": "label",
+                        "questionDataType": "string",
+                        "code": "13",
+                        "parentCode": "5",
+                        "__v": 0
+                    },
+                    "displayTexts": {
+                        "isStatic": false,
+                        "_id": "5ee9d95ee5882c5bf0ce87d9",
+                        "english": "2.  ናዝሬት",
+                        "amharic": "2.  ናዝሬት",
+                        "afanOromo": "2.  ናዝሬት",
+                        "tigrigna": "2.  ናዝሬት",
+                        "__v": 0
+                    }
+                }
+            ]
+        }
+    ]
+]
