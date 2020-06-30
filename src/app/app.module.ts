@@ -1,3 +1,4 @@
+import { UssdAppService } from './shemeta';
 import { CommonModule } from '@angular/common';
 // Angular
 import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
@@ -50,6 +51,7 @@ import {
   SplashScreenService,
   SubheaderService
 } from './core/_base/layout';
+
 // Auth
 import { AuthModule } from './views/pages/auth/auth.module';
 import { AuthService } from './core/auth';
@@ -136,6 +138,7 @@ export function getHighlightLanguages() {
     PageConfigService,
     KtDialogService,
     DataTableService,
+    UssdAppService,
     SplashScreenService,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,

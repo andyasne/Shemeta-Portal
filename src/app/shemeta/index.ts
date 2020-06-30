@@ -1,0 +1,1 @@
+export {UssdAppService} from '../shemeta/services/ussdApp.service'

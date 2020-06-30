@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuilderComponent implements OnInit {
 
-   cols=[1,2,1,2 ,1,2];;
+   cols=[1,2,1,2 ];;
    rows=[1,2,3,3,4];
 
   constructor() { }
