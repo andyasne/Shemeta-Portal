@@ -21,25 +21,20 @@
     <div class="row align-text-top" style="margin-top: 5; margin-bottom: 5;">
         <div class="col-md-6">
             <div class="card text-white bg-primary mb-3">
-                <div class="card-body " *ngFor="let mi of menuElements" >
-                    <h5 class="card-title">{{mi.menuItem.selector}} {{mi.displayTexts.amharic}} </h5>
-
+                <div class="card-body " >
+                    <h6 class="card-title" *ngFor="let mi of menuElements" >{{mi.menuItem.selector}} {{mi.displayTexts.amharic}} </h6>
+                </div>
                 </div>
             </div>
-        </div>
     </div>
     <div class="card mb-3">
         <div class="card-header">Input</div>
         <div class="card-body">
             <div class="row" style="margin-top: 5; margin-bottom: 15;">
                 <div class="col-md-4">
-                        <form class="form" id="kt_form">
-                            <div class="form-group">
-                                <label>Input</label>
-                                <input type="text" class="form-control" name="fname" [(ngModel)]="input" placeholder="Input" value="1">
-                                <span class="form-text text-muted">Please enter an Input.</span>
+
+                                <input type="text" class="form-control" name="fname" [(ngModel)]="input" placeholder="Input" >
                             </div>
-                            </form>    </div>
                 <div class="col-md-4">
                     <button type="button" (click)="getNextMenu()" class="btn btn-success">Enter</button>
 

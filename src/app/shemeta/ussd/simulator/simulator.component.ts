@@ -21,6 +21,7 @@ export class SimulatorComponent implements OnInit,AfterViewInit {
   }
   menuElements: any = [];
   input:any;
+  phone='911223344';
   myControl: FormControl = new FormControl();
   ngAfterViewInit(): void {}
 
@@ -30,7 +31,7 @@ export class SimulatorComponent implements OnInit,AfterViewInit {
       this.input="1";
     }
 
-    this.ussdAppService.getMenu(this.input).pipe(
+    this.ussdAppService.getMenu(this.input,this.phone).pipe(
       tap(res => {
         //  menu:res;
         if (res) {
@@ -41,11 +42,7 @@ export class SimulatorComponent implements OnInit,AfterViewInit {
             });
           }
         }
-        //  menu = res;
-        // const result = this.baseFilter(res, queryParams);
-        // this.entitySubject.next(result.items);
-        // this.paginatorTotalSubject.next(result.totalCount);
-        console.log(this.menuElements);
+      this.input="";
       }),
       catchError(err => of(
         // new QueryResultsModel([], err)
