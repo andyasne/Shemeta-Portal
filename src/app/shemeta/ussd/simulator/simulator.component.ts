@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
 import { UssdAppService } from '../../../shemeta';
 // Angular
 import { CollectionViewer, DataSource } from '@angular/cdk/collections';
@@ -6,19 +7,30 @@ import { CollectionViewer, DataSource } from '@angular/cdk/collections';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
 import { DataTableItemModel, DataTableService } from '../../../core/_base/layout';
+import { FormControl, FormGroup, FormBuilder, NgModel } from '@angular/forms';
+
 import { MenuModel } from '../../models/menu.model'
 import { MenuElementModel } from '../../models/menuElement.model'
 @Component({
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.scss']
 })
-export class SimulatorComponent implements OnInit {
+export class SimulatorComponent implements OnInit,AfterViewInit {
   constructor(private ussdAppService: UssdAppService) { }
-  menuElements: any = [];
   ngOnInit(): void {
   }
+  menuElements: any = [];
+  input:any;
+  myControl: FormControl = new FormControl();
+  ngAfterViewInit(): void {}
+
   getNextMenu() {
-    this.ussdAppService.getAllItems().pipe(
+    if(this.input===undefined|| this.input ===null)
+    {
+      this.input="1";
+    }
+
+    this.ussdAppService.getMenu(this.input).pipe(
       tap(res => {
         //  menu:res;
         if (res) {

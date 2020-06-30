@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ShemetaRoutingModule } from './shemeta-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -56,7 +58,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [DashboardComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective],
   imports: [
-    CommonModule,
+    CommonModule,FormsModule,HttpClientModule,
 	 RouterModule.forChild(routes)
   ],	entryComponents: [
 	NgbdModalContentComponent

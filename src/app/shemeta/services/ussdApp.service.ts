@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { MenuModel } from '../models/menu.model';
 import { MenuElementModel } from '../models/menuElement.model';
 
-const API_DATATABLE_URL = 'http://localhost:3000/v1/menu/getNextMenu?sessionId=11&phoneNumber=9113211&selector=1';
+const API_DATATABLE_URL = 'http://localhost:3000/v1/menu/getNextMenu?sessionId=11&phoneNumber=9113211&selector=';
 
 @Injectable()
 export class UssdAppService {
@@ -18,7 +18,7 @@ export class UssdAppService {
   /**
    * Returns data from fake server
    */
-  getAllItems(): Observable<MenuModel> {
-    return this.http.get<MenuModel>(API_DATATABLE_URL);
+  getMenu(selector:string): Observable<MenuModel> {
+    return this.http.get<MenuModel>(API_DATATABLE_URL+ `${selector}`);
   }
 }
