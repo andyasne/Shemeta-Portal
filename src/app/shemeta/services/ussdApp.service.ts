@@ -1,3 +1,5 @@
+import { HttpUtilsService } from './../../core/_base/crud/utils/http-utils.service';
+import { UssdUserModel } from './../models/ussdUser.model';
 // Angular
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -12,13 +14,19 @@ const API_DATATABLE_URL = 'http://localhost:3000/v1/menu/getNextMenu?sessionId=1
 @Injectable()
 export class UssdAppService {
 
-      constructor(private http: HttpClient) {
+      constructor(private http: HttpClient,private httpUtils: HttpUtilsService,) {
   }
 
-  /**
-   * Returns data from fake server
-   */
   getMenu(selector:string,phone:string): Observable<MenuModel> {
     return this.http.get<MenuModel>('http://localhost:3000/v1/menu/getNextMenu?sessionId=11&phoneNumber='+phone+'&selector='+selector);
+  }
+
+  getAllUssdUsers(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/v1/ussdUser');
+  }
+
+  createUssdUser(ussdUserModel:UssdUserModel): Observable<UssdUserModel> {
+  const httpHeaders = this.httpUtils.getHTTPHeaders();
+  return this.http.post<UssdUserModel>('http://localhost:3000/v1/ussdUser',ussdUserModel,{headers: httpHeaders});
   }
 }

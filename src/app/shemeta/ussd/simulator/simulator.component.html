@@ -5,15 +5,21 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <select id="formInput48" class="form-control">
-                            <option>911234563</option>
+                        <!-- <select id="formInput48" class="form-control">
+                            <option *ngFor="let mi of this.menuElements" >911234563</option>
                             <option>911884569</option>
                             <option>919934770</option>
-                        </select>
+                        </select> -->
+                        <mat-select placeholder="Select User" [(ngModel)]= "selectedUser">
+
+                        <mat-option *ngFor="let user of ussdUsers" [value]="user">
+                            {{ user.phoneNumber }}
+                        </mat-option>
+                        </mat-select>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <button type="button" class="btn btn-primary">New</button>
+                    <button type="button" (click)="addPhone()" class="btn btn-primary">New</button>
                 </div>
             </div>
         </div>
@@ -48,7 +54,7 @@
     </div>
     <div class="card mb-3">
         <div class="card-body align-self-end">
-            <button type="button" class="btn btn-danger">Reset</button>
+            <button type="button" (click)="reset()" class="btn btn-danger">Reset</button>
             <button type="button" class="btn btn-warning ml-4 mr-4">Clear History</button>
         </div>
     </div>
