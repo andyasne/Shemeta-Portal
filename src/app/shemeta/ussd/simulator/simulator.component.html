@@ -22,7 +22,9 @@
         <div class="col-md-6">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body " >
-                    <h6 class="card-title" *ngFor="let mi of menuElements" >{{mi.menuItem.selector}} {{mi.displayTexts.amharic}} </h6>
+                    <div *ngFor="let mi of this.menuElements" >
+                    <h6 >{{mi.menuItem.selector}}.{{mi.displayTexts.amharic}} </h6>
+                    </div>
                 </div>
                 </div>
             </div>

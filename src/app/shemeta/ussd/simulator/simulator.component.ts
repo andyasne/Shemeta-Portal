@@ -15,7 +15,8 @@ import { MenuElementModel } from '../../models/menuElement.model'
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.scss']
 })
-export class SimulatorComponent implements OnInit,AfterViewInit {
+export class SimulatorComponent implements OnInit {
+
   constructor(private ussdAppService: UssdAppService) { }
   ngOnInit(): void {
   }
@@ -25,7 +26,7 @@ export class SimulatorComponent implements OnInit,AfterViewInit {
   myControl: FormControl = new FormControl();
   ngAfterViewInit(): void {}
 
-  getNextMenu() {
+   getNextMenu() {
     if(this.input===undefined|| this.input ===null)
     {
       this.input="1";
@@ -52,5 +53,10 @@ export class SimulatorComponent implements OnInit,AfterViewInit {
         () => { }
       )
     ).subscribe();
+
+
+
   }
+ 
+
 }
