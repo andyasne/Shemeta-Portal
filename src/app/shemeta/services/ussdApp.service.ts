@@ -29,4 +29,8 @@ export class UssdAppService {
   const httpHeaders = this.httpUtils.getHTTPHeaders();
   return this.http.post<UssdUserModel>('http://localhost:3000/v1/ussdUser',ussdUserModel,{headers: httpHeaders});
   }
+
+  getUserData(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/v1/menu/getUserData');
+  }
 }

@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5 pt-auto">
     <div class="card border-secondary mb-3">
-        <div class="card-header">Phone Number</div>
+        <div class="card-header">USSD User</div>
         <div class="card-body text-secondary">
             <div class="row">
                 <div class="col-md-5">
@@ -13,7 +13,7 @@
                         <mat-select placeholder="Select User" [(ngModel)]= "selectedUser">
 
                         <mat-option *ngFor="let user of ussdUsers" [value]="user">
-                            {{ user.phoneNumber }}
+                            {{ user.phoneNumber}}-{{user.fullName}}
                         </mat-option>
                         </mat-select>
                     </div>
@@ -29,7 +29,7 @@
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body " >
                     <div *ngFor="let mi of this.menuElements" >
-                    <h6 >{{mi.menuItem.selector}}.{{mi.displayTexts.amharic}} </h6>
+                    <h6 >{{mi.menuItem.selector}}.{{mi.displayTexts.amharic}}</h6>
                     </div>
                 </div>
                 </div>

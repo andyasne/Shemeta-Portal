@@ -1,8 +1,8 @@
+import { PortletModule } from './../views/partials/content/general/portlet/portlet.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
 import { ShemetaRoutingModule } from './shemeta-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ShemetaComponent } from './shemeta.component';
@@ -17,7 +17,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatSelectModule } from '@angular/material/select';
@@ -36,7 +35,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgbProgressbarModule, NgbProgressbarConfig } from '@ng-bootstrap/ng-bootstrap';
-// import { MenuComponent } from './components/menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { NgbdModalContentComponent } from "./components/menu/NgbdModalContentComponent";
 import { AddPhoneNumberComponent } from './components/add-phone-number/add-phone-number.component';
 
@@ -81,7 +80,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent,NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent],
+  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent],
   imports: [
 	CommonModule,FormsModule,HttpClientModule,
 	MatButtonModule,
@@ -93,6 +92,7 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		MatAutocompleteModule,
 		MatRadioModule,
+		PortletModule,
 		MatIconModule,
 		MatNativeDateModule,
 		MatProgressBarModule,
