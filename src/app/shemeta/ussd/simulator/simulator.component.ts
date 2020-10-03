@@ -27,6 +27,7 @@ export class SimulatorComponent implements OnInit {
   menuElements: any = [];
   ussdUsers: any = [];
   input: any;
+  sessionId: any;
   selectedUser: any;
   phone = '911223344';
   myControl: FormControl = new FormControl();
@@ -34,7 +35,8 @@ export class SimulatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.PopulateUsers();
-
+    let randomSessionId = Math.floor(Math.random() * 1000);
+    this.sessionId= randomSessionId.toString();
   }
 
 
@@ -59,6 +61,16 @@ export class SimulatorComponent implements OnInit {
       )
     ).subscribe();
   }
+  startNewSession() {
+    if ( this.selectedUser === undefined) {
+      this.layoutUtilsSercvice.showActionNotification
+        ('Please Enter select a user.', MessageType.Create, 10000, true, false, 0, 'top');
+      return;
+
+    }
+    this.input ='0';
+    this.getNextMenu();
+  }
 
   getNextMenu() {
     if (this.input === undefined || this.input === null || this.selectedUser === undefined) {
@@ -68,13 +80,9 @@ export class SimulatorComponent implements OnInit {
 
     }
 
-    this.ussdAppService.getMenu(this.input, this.selectedUser.phoneNumber).pipe(
+    this.ussdAppService.getMenu(this.input, this.selectedUser.phoneNumber,this.sessionId).pipe(
       tap(res => {
-        //  menu:res;
         if (res) {
-          // this.menuElements = [];
-          // this.menuElements = res.menuElements;
-
           if (res.menuElements) {
             this.menuElements = [];
             res.menuElements.forEach(mi => {
@@ -85,8 +93,6 @@ export class SimulatorComponent implements OnInit {
         this.input = "";
       }),
       catchError(err => of(
-        // new QueryResultsModel([], err)
-        // console.log(err);
       )),
       finalize(
         () => { }

@@ -21,6 +21,14 @@
                 <div class="col-md-2">
                     <button type="button" (click)="addPhone()" class="btn btn-primary">New</button>
                 </div>
+                <div class="col-md-3">
+
+                    <input type="text" class="form-control" name="session" [(ngModel)]="sessionId" placeholder="Session Id" >
+                </div>
+                <div class="col-md-2">
+
+                    <button type="button" (click)="startNewSession()" class="btn btn-success">Start Session</button>
+                </div>
             </div>
         </div>
     </div>

@@ -17,8 +17,8 @@ export class UssdAppService {
       constructor(private http: HttpClient,private httpUtils: HttpUtilsService,) {
   }
 
-  getMenu(selector:string,phone:string): Observable<MenuModel> {
-    return this.http.get<MenuModel>('http://localhost:3000/v1/menu/getNextMenu?sessionId=11&phoneNumber='+phone+'&selector='+selector);
+  getMenu(selector:string,phone:string,sessionId:string): Observable<MenuModel> {
+    return this.http.get<MenuModel>(`http://localhost:3000/v1/menu/getNextMenu?sessionId=${sessionId}&phoneNumber=${phone}&selector=${selector}`);
   }
 
   getAllUssdUsers(): Observable<any> {

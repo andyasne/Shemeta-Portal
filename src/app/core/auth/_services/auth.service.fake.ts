@@ -17,6 +17,7 @@ import {Role} from '../_models/role.model';
 
 const API_USERS_URL = 'api/users';
 const API_PERMISSION_URL = 'api/permissions';
+
 const API_ROLES_URL = 'api/roles';
 
 @Injectable()
