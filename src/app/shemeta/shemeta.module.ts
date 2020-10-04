@@ -38,6 +38,7 @@ import { NgbProgressbarModule, NgbProgressbarConfig } from '@ng-bootstrap/ng-boo
 import { MenuComponent } from './components/menu/menu.component';
 import { NgbdModalContentComponent } from "./components/menu/NgbdModalContentComponent";
 import { AddPhoneNumberComponent } from './components/add-phone-number/add-phone-number.component';
+import { AddMenuComponent } from './components/add-menu/add-menu.component';
 
 const routes: Routes = [
 	{
@@ -80,7 +81,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent],
+  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent, AddMenuComponent],
   imports: [
 	CommonModule,FormsModule,HttpClientModule,
 	MatButtonModule,

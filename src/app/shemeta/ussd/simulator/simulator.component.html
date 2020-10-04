@@ -36,8 +36,8 @@
         <div class="col-md-6">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body " >
-                    <div *ngFor="let mi of this.menuElements" >
-                    <h6 >{{mi.menuItem.selector}}.{{mi.displayTexts.amharic}}</h6>
+                    <div *ngFor="let mi of menuElements" >
+                    <h6 >  {{mi.displayTexts.amharic  }}</h6>
                     </div>
                 </div>
                 </div>
@@ -48,15 +48,17 @@
         <div class="card-body">
             <div class="row" style="margin-top: 5; margin-bottom: 15;">
                 <div class="col-md-4">
-
                                 <input type="text" class="form-control" name="fname" [(ngModel)]="input" placeholder="Input" >
                             </div>
                 <div class="col-md-4">
                     <button type="button" (click)="getNextMenu()" class="btn btn-success">Enter</button>
-
-
-
                 </div>
+
+                <div class="col-md-4">
+               <div class="align-self-end">
+                    <button type="button" (click)="addNewMenu()" class="btn btn-warning">Add New Menu</button>
+                </div>
+            </div>
             </div>
         </div>
     </div>

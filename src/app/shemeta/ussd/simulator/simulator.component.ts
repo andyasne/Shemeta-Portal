@@ -71,7 +71,17 @@ export class SimulatorComponent implements OnInit {
     this.input ='0';
     this.getNextMenu();
   }
+  addNewMenu(){
+    const dialogRef = this.dialog.open(AddPhoneNumberComponent, { data: {} },);
+    dialogRef.afterClosed().subscribe(res => {
+      if (!res) {
+        return;
+      }
 
+      // this.PopulateUsers();
+      this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
+    });
+  }
   getNextMenu() {
     if (this.input === undefined || this.input === null || this.selectedUser === undefined) {
       this.layoutUtilsSercvice.showActionNotification

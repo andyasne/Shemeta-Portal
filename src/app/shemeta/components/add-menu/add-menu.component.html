@@ -1,0 +1,102 @@
+<div class="card card-custom" [ngClass]="{ 'card-body-progress card-body-progress-overlay' : viewLoading }">
+	<div class="card-header">
+		<div class="card-title">
+			<h3 class="card-label"> New Menu</h3>
+		</div>
+	</div>
+	<form class="form" [formGroup]="ussdUserForm">
+		<div class="card-body">
+
+			<div class="card-body-progress">
+				<mat-spinner [diameter]="20"></mat-spinner>
+			</div>
+
+	 			<div class="form-group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput placeholder="Enter Phone Number" formControlName="phoneNumber" />
+						<mat-error>Phone Number is
+							<strong>required</strong>
+						</mat-error>
+						<mat-hint align="start">Please enter
+							<strong>Phone Number</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+
+
+			</div>
+
+			<div class="form-group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput placeholder="Enter Full Name" formControlName="fullName" />
+						<mat-error>Full Name is
+							<strong>required</strong>
+						</mat-error>
+						<mat-hint align="start">Please enter
+							<strong>Full Name</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="Default Language" formControlName="defaultLanguage">
+							<mat-option value="am">Amharic</mat-option>
+							<mat-option value="en">English</mat-option>
+							<mat-option value="or">Afan Oromo</mat-option>
+							<mat-option value="tg">Tigregna</mat-option>
+						</mat-select>
+						<mat-hint align="start">
+							<strong>Default Language</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+			</div>
+			<div class="form-group row">
+			<div class="col-lg-6 kt-margin-bottom-20-mobile">
+				<mat-form-field class="mat-form-field-fluid">
+					<input matInput [matDatepicker]="picker"
+						placeholder="Choose a Registration Date"
+						formControlName="registrationDate" />
+					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+					<mat-datepicker #picker></mat-datepicker>
+					<mat-hint align="start">Please enter
+						<strong> Registration Date</strong> in 'mm/dd/yyyy' format</mat-hint>
+				</mat-form-field>
+			</div></div>
+
+			<div class="form-group row">
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="Is Active" formControlName="isActive">
+							<mat-option value=True>True</mat-option>
+							<mat-option value=False>False</mat-option>
+						</mat-select>
+						<mat-hint align="start">
+							<strong>Is Active</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="card-footer">
+			<div class="d-flex justify-content-between">
+				<div class="mr-2"></div>
+				<div>
+					<button type="button" mat-raised-button [mat-dialog-close]="data.animal" cdkFocusInitial matTooltip="Cancel changes">
+						Cancel
+					</button>&nbsp;
+					<button type="button" mat-raised-button color="primary" (click)="onSubmit()" [disabled]="viewLoading" matTooltip="Save changes">
+						Save
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
