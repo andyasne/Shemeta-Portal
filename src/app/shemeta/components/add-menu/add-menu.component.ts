@@ -1,5 +1,6 @@
 import { UssdAppService } from './../../services/ussdApp.service';
 import { UssdUserModel } from './../../models/ussdUser.model';
+import { USSDMenuModel } from './../../models/uSSDMenu.model';
 // RxJS
 import { Observable, BehaviorSubject } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
@@ -26,7 +27,7 @@ import { isBoolean } from 'lodash';
   styleUrls: ['./add-menu.component.scss']
 })
 export class AddMenuComponent implements OnInit {
-  ussdUser: UssdUserModel;
+  ussdUser: USSDMenuModel;
 	ussdUserForm: FormGroup;
 	hasFormErrors = false;
 	viewLoading = false;
@@ -59,7 +60,7 @@ export class AddMenuComponent implements OnInit {
 	ngOnInit() {
     // this.store.pipe(select(selectussdUsersActionLoading)).subscribe(res => this.viewLoading = res);
 
-		this.ussdUser = new UssdUserModel();
+		this.ussdUser = new USSDMenuModel();
 		this.createForm();
 	}
 
@@ -74,12 +75,17 @@ export class AddMenuComponent implements OnInit {
 
 	createForm() {
 		this.ussdUserForm = this.fb.group({
-			phoneNumber: [this.ussdUser.phoneNumber, Validators.required],
-			fullName: [this.ussdUser.fullName, Validators.required],
-			defaultLanguage: [this.ussdUser.defaultLanguage, Validators.required],
-			registrationDate: [this.typesUtilsService.getDateFromString(this.ussdUser.registrationDate)],
-			isActive: [this.ussdUser.isActive, Validators.compose([Validators.required])]
-		});
+			code: [this.ussdUser.code, Validators.required],
+			parentCode: [this.ussdUser.parentCode,{ value: '', disabled: true }],
+			displayText: [this.ussdUser.displayText, Validators.required],
+			selector: [this.ussdUser.selector, Validators.required],
+			order: [this.ussdUser.order, Validators.required],
+			menuType: [this.ussdUser.menuType],
+			questionDataType: [this.ussdUser.questionDataType],
+			exit: [this.ussdUser.exit],
+			readOnly: [this.ussdUser.readOnly],
+			loadUserData: [this.ussdUser.loadUserData]
+	 	});
 	}
 
 	/**
@@ -112,7 +118,7 @@ export class AddMenuComponent implements OnInit {
 	prepareussdUser(): UssdUserModel {
 		const controls = this.ussdUserForm.controls;
 		const _ussdUser = new UssdUserModel();
-		_ussdUser.id = this.ussdUser.id;
+
 		const registrationDate = controls.registrationDate.value;
 		if (registrationDate) {
 			_ussdUser.registrationDate = this.typesUtilsService.dateFormat(registrationDate);

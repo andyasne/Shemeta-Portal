@@ -11,77 +11,118 @@
 				<mat-spinner [diameter]="20"></mat-spinner>
 			</div>
 
-	 			<div class="form-group row">
+			<div class="form-group row">
+
 				<div class="col-lg-6 kt-margin-bottom-20-mobile">
 					<mat-form-field class="mat-form-field-fluid">
-						<input matInput placeholder="Enter Phone Number" formControlName="phoneNumber" />
-						<mat-error>Phone Number is
+						<input matInput placeholder="Enter Code" formControlName="code" />
+						<mat-error>Code is
 							<strong>required</strong>
 						</mat-error>
-						<mat-hint align="start">Please enter
-							<strong>Phone Number</strong>
-						</mat-hint>
 					</mat-form-field>
 				</div>
-
+				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid" >
+						<input matInput placeholder="Parent Code" disabled    formControlName="parentCode" readonly />
+					</mat-form-field>
+				</div>
 
 			</div>
 
 			<div class="form-group row">
-				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+				<div class="col-lg-8 kt-margin-bottom-20-mobile">
 					<mat-form-field class="mat-form-field-fluid">
-						<input matInput placeholder="Enter Full Name" formControlName="fullName" />
-						<mat-error>Full Name is
+						<input matInput placeholder="Enter Display Text" formControlName="displayText" />
+						<mat-error>Display Text is
 							<strong>required</strong>
 						</mat-error>
-						<mat-hint align="start">Please enter
-							<strong>Full Name</strong>
-						</mat-hint>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<input matInput placeholder="Enter Selector" formControlName="selector" />
+						<mat-error>Selector is
+							<strong>required</strong>
+						</mat-error>
 					</mat-form-field>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
 					<mat-form-field class="mat-form-field-fluid">
-						<mat-select placeholder="Default Language" formControlName="defaultLanguage">
-							<mat-option value="am">Amharic</mat-option>
-							<mat-option value="en">English</mat-option>
-							<mat-option value="or">Afan Oromo</mat-option>
-							<mat-option value="tg">Tigregna</mat-option>
+						<input matInput placeholder="Enter Order" formControlName="order" />
+						<mat-error>Order is
+							<strong>required</strong>
+						</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select  placeholder="Menu Type" formControlName="menuType">
+							<mat-option  value="label">Label</mat-option>
+							<mat-option value="Input">Input</mat-option>
 						</mat-select>
 						<mat-hint align="start">
-							<strong>Default Language</strong>
+							<strong>Default Menu Type</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="Question Data Type" formControlName="questionDataType">
+							<mat-option value="string">String</mat-option>
+							<mat-option value="number">Number</mat-option>
+						</mat-select>
+						<mat-hint align="start">
+							<strong>Default Question Data Type</strong>
 						</mat-hint>
 					</mat-form-field>
 				</div>
 			</div>
-			<div class="form-group row">
-			<div class="col-lg-6 kt-margin-bottom-20-mobile">
-				<mat-form-field class="mat-form-field-fluid">
-					<input matInput [matDatepicker]="picker"
-						placeholder="Choose a Registration Date"
-						formControlName="registrationDate" />
-					<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-					<mat-datepicker #picker></mat-datepicker>
-					<mat-hint align="start">Please enter
-						<strong> Registration Date</strong> in 'mm/dd/yyyy' format</mat-hint>
-				</mat-form-field>
-			</div></div>
+
+			<div class="separator separator-dashed my-6"></div>
+
 
 			<div class="form-group row">
-				<div class="col-lg-6 kt-margin-bottom-20-mobile">
+
+
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
 					<mat-form-field class="mat-form-field-fluid">
-						<mat-select placeholder="Is Active" formControlName="isActive">
-							<mat-option value=True>True</mat-option>
-							<mat-option value=False>False</mat-option>
+						<mat-select placeholder="Exit" formControlName="exit">
+							<mat-option value="true">True</mat-option>
+							<mat-option value="false">False</mat-option>
 						</mat-select>
 						<mat-hint align="start">
-							<strong>Is Active</strong>
+							<strong>Exit Menu</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="ReadOnly" formControlName="readOnly">
+							<mat-option value="true">True</mat-option>
+							<mat-option value="false">False</mat-option>
+						</mat-select>
+						<mat-hint align="start">
+							<strong>Is Readonly</strong>
+						</mat-hint>
+					</mat-form-field>
+				</div>
+				<div class="col-lg-4 kt-margin-bottom-20-mobile">
+					<mat-form-field class="mat-form-field-fluid">
+						<mat-select placeholder="Load User Data" formControlName="loadUserData">
+							<mat-option value="true">True</mat-option>
+							<mat-option value="false">False</mat-option>
+						</mat-select>
+						<mat-hint align="start">
+							<strong>Can load user Data</strong>
 						</mat-hint>
 					</mat-form-field>
 				</div>
 			</div>
+
 
 
 		</div>

@@ -39,6 +39,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { NgbdModalContentComponent } from "./components/menu/NgbdModalContentComponent";
 import { AddPhoneNumberComponent } from './components/add-phone-number/add-phone-number.component';
 import { AddMenuComponent } from './components/add-menu/add-menu.component';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 
 const routes: Routes = [
 	{
@@ -88,7 +89,7 @@ const routes: Routes = [
 		MatMenuModule,
 		MatSelectModule,
         MatInputModule,
-		MatTableModule,
+		MatTableModule,PerfectScrollbarModule,
 		FormsModule,
 		ReactiveFormsModule,
 		MatAutocompleteModule,
@@ -110,7 +111,8 @@ const routes: Routes = [
 	 RouterModule.forChild(routes)
   ],	entryComponents: [
 	NgbdModalContentComponent,
-	AddPhoneNumberComponent
+	AddPhoneNumberComponent,
+	AddMenuComponent
 ]
 })
 export class ShemetaModule { }

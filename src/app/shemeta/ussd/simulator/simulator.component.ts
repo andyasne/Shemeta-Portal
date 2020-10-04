@@ -1,3 +1,4 @@
+import { AddMenuComponent } from './../../components/add-menu/add-menu.component';
 import { MessageType } from './../../../core/_base/crud/utils/layout-utils.service';
 import { AddPhoneNumberComponent } from './../../components/add-phone-number/add-phone-number.component';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, ChangeDetectionStrategy, ViewEncapsulation, } from '@angular/core';
@@ -72,12 +73,11 @@ export class SimulatorComponent implements OnInit {
     this.getNextMenu();
   }
   addNewMenu(){
-    const dialogRef = this.dialog.open(AddPhoneNumberComponent, { data: {} },);
+    const dialogRef = this.dialog.open(AddMenuComponent, { data: {} },);
     dialogRef.afterClosed().subscribe(res => {
       if (!res) {
         return;
       }
-
       // this.PopulateUsers();
       this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
     });

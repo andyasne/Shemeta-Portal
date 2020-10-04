@@ -9,6 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { GestureConfig } from '@angular/material/core';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+
 // Angular in memory
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 // Perfect Scroll bar
@@ -106,6 +108,7 @@ export function getHighlightLanguages() {
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+		PerfectScrollbarModule,
     HttpClientModule,
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeApiService, {
