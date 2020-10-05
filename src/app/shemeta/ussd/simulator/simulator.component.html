@@ -33,11 +33,26 @@
         </div>
     </div>
     <div class="row align-text-top" style="margin-top: 5; margin-bottom: 5;">
-        <div class="col-md-6">
+        <div class="col-md-10">
             <div class="card text-white bg-primary mb-3">
                 <div class="card-body " >
-                    <div *ngFor="let mi of menuElements" >
-                    <h6 >  {{mi.displayTexts.amharic  }}</h6>
+
+                    <div *ngFor="let mi of this.menuElements" >
+                        <div class="row">
+                            <div class="col-md-6">
+                            <h6  >{{mi.menuItem.selector}}.{{mi.displayTexts.amharic}} </h6>
+                        </div>
+                        <div class="col-md-3">
+
+                            <button mat-button (click)="openMenu(mi.menuItem.selector)" > Open</button>
+                            </div>
+                        <div class="col-md-3 align-self-end">
+
+                             <button mat-button (click)="openAddMenu(mi.menuItem.code)" > Add Menu Item</button>
+                             </div>
+
+                        </div>
+
                     </div>
                 </div>
                 </div>
@@ -56,7 +71,8 @@
 
                 <div class="col-md-4">
                <div class="align-self-end">
-                    <button type="button" (click)="addNewMenu()" class="btn btn-warning">Add New Menu</button>
+
+                       <button  mat-raised-button  (click)="addNewMenu()" class="btn btn-warning">Add New Menu</button>
                 </div>
             </div>
             </div>

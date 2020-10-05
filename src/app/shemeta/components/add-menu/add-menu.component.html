@@ -4,7 +4,7 @@
 			<h3 class="card-label"> New Menu</h3>
 		</div>
 	</div>
-	<form class="form" [formGroup]="ussdUserForm">
+	<form class="form" [formGroup]="ussdMenuForm">
 		<div class="card-body">
 
 			<div class="card-body-progress">
@@ -23,7 +23,7 @@
 				</div>
 				<div class="col-lg-6 kt-margin-bottom-20-mobile">
 					<mat-form-field class="mat-form-field-fluid" >
-						<input matInput placeholder="Parent Code" disabled    formControlName="parentCode" readonly />
+						<input matInput placeholder="Parent Code"     formControlName="parentCode"  />
 					</mat-form-field>
 				</div>
 
@@ -133,7 +133,7 @@
 					<button type="button" mat-raised-button [mat-dialog-close]="data.animal" cdkFocusInitial matTooltip="Cancel changes">
 						Cancel
 					</button>&nbsp;
-					<button type="button" mat-raised-button color="primary" (click)="onSubmit()" [disabled]="viewLoading" matTooltip="Save changes">
+					<button type="button" mat-raised-button color="primary" (click)="onSubmit()"   matTooltip="Save changes">
 						Save
 					</button>
 				</div>

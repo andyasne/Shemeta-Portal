@@ -21,6 +21,17 @@ export class UssdAppService {
     return this.http.get<MenuModel>(`http://localhost:3000/v1/menu/getNextMenu?sessionId=${sessionId}&phoneNumber=${phone}&selector=${selector}`);
   }
 
+  saveMenu(menuElementModel:MenuElementModel): Observable<MenuElementModel> {
+  const httpHeaders = this.httpUtils.getHTTPHeaders();
+  const menu =[[
+  {  menuElements : [{menuItem: menuElementModel.menuItem,
+    displayTexts:menuElementModel.displayTexts
+  }]}
+  ]
+  ];
+  return this.http.post<MenuElementModel>('http://localhost:3000/v1/menu',menu,{headers: httpHeaders});
+  }
+
   getAllUssdUsers(): Observable<any> {
     return this.http.get<any>('http://localhost:3000/v1/ussdUser');
   }

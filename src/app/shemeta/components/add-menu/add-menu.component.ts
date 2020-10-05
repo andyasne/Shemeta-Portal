@@ -20,17 +20,22 @@ import { AppState } from '../../../core/reducers';
 // CRUD
 import { TypesUtilsService } from '../../../core/_base/crud';
 import { isBoolean } from 'lodash';
+import { MenuElementModel } from '../../models/menuElement.model';
+import { _displayTexts } from '../../models/_displayTexts';
+import { _menuItem } from '../../models/_menuItem';
+
 // Services and Models
 @Component({
-  selector: 'kt-add-menu',
-  templateUrl: './add-menu.component.html',
-  styleUrls: ['./add-menu.component.scss']
+	selector: 'kt-add-menu',
+	templateUrl: './add-menu.component.html',
+	styleUrls: ['./add-menu.component.scss']
 })
 export class AddMenuComponent implements OnInit {
-  ussdUser: USSDMenuModel;
-	ussdUserForm: FormGroup;
+	ussdMenu: MenuElementModel;
+	ussdMenuForm: FormGroup;
 	hasFormErrors = false;
 	viewLoading = false;
+	parentCode=''
 	// Private properties
 	private componentSubscriptions: Subscription;
 
@@ -44,10 +49,11 @@ export class AddMenuComponent implements OnInit {
 	 * @param typesUtilsService: TypesUtilsService
 	 */
 	constructor(public dialogRef: MatDialogRef<AddMenuComponent>,
-		@Inject(MAT_DIALOG_DATA) public data: any,private ussdAppService: UssdAppService,
+		@Inject(MAT_DIALOG_DATA) public data: any, private ussdAppService: UssdAppService,
 		private fb: FormBuilder,
 		private store: Store<AppState>,
 		private typesUtilsService: TypesUtilsService) {
+			this.parentCode=data.code;
 	}
 
 	/**
@@ -58,9 +64,8 @@ export class AddMenuComponent implements OnInit {
 	 * On init
 	 */
 	ngOnInit() {
-    // this.store.pipe(select(selectussdUsersActionLoading)).subscribe(res => this.viewLoading = res);
-
-		this.ussdUser = new USSDMenuModel();
+		this.ussdMenu = new MenuElementModel();
+		this.ussdMenu.menuItem.parentCode= Number.parseInt( this.parentCode);
 		this.createForm();
 	}
 
@@ -74,29 +79,24 @@ export class AddMenuComponent implements OnInit {
 	}
 
 	createForm() {
-		this.ussdUserForm = this.fb.group({
-			code: [this.ussdUser.code, Validators.required],
-			parentCode: [this.ussdUser.parentCode,{ value: '', disabled: true }],
-			displayText: [this.ussdUser.displayText, Validators.required],
-			selector: [this.ussdUser.selector, Validators.required],
-			order: [this.ussdUser.order, Validators.required],
-			menuType: [this.ussdUser.menuType],
-			questionDataType: [this.ussdUser.questionDataType],
-			exit: [this.ussdUser.exit],
-			readOnly: [this.ussdUser.readOnly],
-			loadUserData: [this.ussdUser.loadUserData]
-	 	});
+		this.ussdMenuForm = this.fb.group({
+			code: [this.ussdMenu.menuItem.code, Validators.required],
+			parentCode: [this.ussdMenu.menuItem.parentCode,{ value: this.parentCode, disabled: true }],
+			displayText: [this.ussdMenu.displayTexts.amharic, Validators.required],
+			selector: [this.ussdMenu.menuItem.selector, Validators.required],
+			order: [this.ussdMenu.menuItem.order, Validators.required],
+			menuType: [this.ussdMenu.menuItem.menuType],
+			questionDataType: [this.ussdMenu.menuItem.questionDataType],
+			exit: [this.ussdMenu.menuItem.exit],
+			readOnly: [this.ussdMenu.menuItem.readOnly,{ value: false}],
+			loadUserData: [this.ussdMenu.menuItem.loadUserData]
+		});
 	}
 
 	/**
 	 * Returns page title
 	 */
 	getTitle(): string {
-		// if (this.ussdUser.id > 0) {
-		// 	return `Edit ussdUser '${this.ussdUser.firstName} ${
-		// 		this.ussdUser.lastName
-		// 		}'`;
-		// }
 		return 'New User';
 	}
 
@@ -105,7 +105,7 @@ export class AddMenuComponent implements OnInit {
 	 * @param controlName: string
 	 */
 	isControlInvalid(controlName: string): boolean {
-		const control = this.ussdUserForm.controls[controlName];
+		const control = this.ussdMenuForm.controls[controlName];
 		const result = control.invalid && control.touched;
 		return result;
 	}
@@ -115,21 +115,23 @@ export class AddMenuComponent implements OnInit {
 	/**
 	 * Returns prepared ussdUser
 	 */
-	prepareussdUser(): UssdUserModel {
-		const controls = this.ussdUserForm.controls;
-		const _ussdUser = new UssdUserModel();
-
-		const registrationDate = controls.registrationDate.value;
-		if (registrationDate) {
-			_ussdUser.registrationDate = this.typesUtilsService.dateFormat(registrationDate);
-		} else {
-			_ussdUser.registrationDate = '';
-		}
-		_ussdUser.phoneNumber = controls.phoneNumber.value;
-		_ussdUser.fullName = controls.fullName.value;
-		_ussdUser.defaultLanguage = controls.defaultLanguage.value;
-		 _ussdUser.isActive = Boolean(controls.isActive.value);
-		return _ussdUser;
+	prepareussdMenu(): MenuElementModel {
+		const controls = this.ussdMenuForm.controls;
+		const _ussdMenu = new MenuElementModel();
+		_ussdMenu.menuItem.code = controls.code.value;
+		_ussdMenu.displayTexts.amharic = controls.displayText.value;
+		_ussdMenu.displayTexts.english = controls.displayText.value;
+		_ussdMenu.displayTexts.afanOromo = controls.displayText.value;
+		_ussdMenu.displayTexts.tigrigna = controls.displayText.value;
+		_ussdMenu.menuItem.exit =   Boolean(JSON.parse(controls.exit.value));
+		_ussdMenu.menuItem.loadUserData = Boolean(JSON.parse(controls.loadUserData.value));
+		_ussdMenu.menuItem.readOnly = Boolean(JSON.parse(controls.readOnly.value));
+		_ussdMenu.menuItem.menuType = controls.menuType.value;
+		_ussdMenu.menuItem.order = controls.order.value;
+		_ussdMenu.menuItem.questionDataType = controls.questionDataType.value;
+		_ussdMenu.menuItem.selector = controls.selector.value;
+		_ussdMenu.menuItem.parentCode = controls.parentCode.value;
+		return _ussdMenu;
 	}
 
 	/**
@@ -137,9 +139,9 @@ export class AddMenuComponent implements OnInit {
 	 */
 	onSubmit() {
 		this.hasFormErrors = false;
-		const controls = this.ussdUserForm.controls;
+		const controls = this.ussdMenuForm.controls;
 		/** check form */
-		if (this.ussdUserForm.invalid) {
+		if (this.ussdMenuForm.invalid) {
 			Object.keys(controls).forEach(controlName =>
 				controls[controlName].markAsTouched()
 			);
@@ -148,56 +150,24 @@ export class AddMenuComponent implements OnInit {
 			return;
 		}
 
-		const editedussdUser = this.prepareussdUser();
-		if (editedussdUser.id===undefined) {
-			this.createussdUser(editedussdUser);
 
-		} else {
-			this.updateussdUser(editedussdUser);
+		this.createUssdMenu(this.prepareussdMenu());
 
-		}
 	}
 
-	/**
-	 * Update ussdUser
-	 *
-	 * @param _ussdUser: UssdUserModel
-	 */
-	updateussdUser(_ussdUser: UssdUserModel) {
-		const updateussdUser: Update<UssdUserModel> = {
-			id: _ussdUser.id,
-			changes: _ussdUser
-		};
-		// this.store.dispatch(new ussdUserUpdated({
-		// 	partialussdUser: updateussdUser,
-		// 	ussdUser: _ussdUser
-		// }));
 
-		// Remove this line
-		of(undefined).pipe(delay(1000)).subscribe(() => this.dialogRef.close({ _ussdUser, isEdit: true }));
-		// Uncomment this line
-		// this.dialogRef.close({ _ussdUser, isEdit: true }
-	}
-
-	/**
-	 * Create ussdUser
-	 *
-	 * @param _ussdUser: UssdUserModel
-	 */
-	createussdUser(_ussdUser: UssdUserModel) {
-		this.ussdAppService.createUssdUser(_ussdUser).pipe(
+	createUssdMenu(menuElementModel: MenuElementModel) {
+		this.ussdAppService.saveMenu(menuElementModel).pipe(
 			tap(res => {
-				this.dialogRef.close({ _ussdUser, isEdit: false });
+			//	this.dialogRef.close();
 
-			}) ,
+			}),
 			catchError(err => of(
-				// new QueryResultsModel([], err)
-				// console.log(err);
-			  )),
+			)),
 			finalize(
-			  () => { }
+				() => { }
 			)
-		  ).subscribe();
+		).subscribe();
 
 	}
 

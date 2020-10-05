@@ -1,28 +1,13 @@
+import { _displayTexts } from './_displayTexts';
+import { _menuItem } from './_menuItem';
+
 export class MenuElementModel {
-    menuItem: _menuItem;
-    displayTexts: _displayTexts;
-}
-export class _menuItem {
-    loadUserData: boolean;
-    readOnly: boolean;
-    exit: boolean;
-    _id: string;
-    displayText: string;
-    selector: string;
-    order: number;
-    menuType: string;
-    questionDataType: string;
-    code: number;
-    parentCode: number;
-
+   public menuItem: _menuItem;
+   public displayTexts: _displayTexts;
+    constructor()
+    {
+        this.menuItem = new _menuItem();
+        this.displayTexts= new _displayTexts();
+    }
 }
 
-
-export class _displayTexts {
-    isStatic: boolean;
-    _id: string;
-    english: string;
-    amharic: string;
-    afanOromo: string;
-    tigrigna: string;
-}

@@ -1,3 +1,5 @@
+import { select } from '@ngrx/store';
+import { SliderComponent } from './../../../views/pages/material/formcontrols/slider/slider.component';
 import { AddMenuComponent } from './../../components/add-menu/add-menu.component';
 import { MessageType } from './../../../core/_base/crud/utils/layout-utils.service';
 import { AddPhoneNumberComponent } from './../../components/add-phone-number/add-phone-number.component';
@@ -16,6 +18,8 @@ import { LayoutUtilsService } from '../../../core/_base/crud';
 
 import { MenuModel } from '../../models/menu.model'
 import { MenuElementModel } from '../../models/menuElement.model'
+import { SlidertoggleComponent } from 'src/app/views/pages/material/formcontrols/slidertoggle/slidertoggle.component';
+import { ChangeDetectorRef } from '@angular/core';
 @Component({
   templateUrl: './simulator.component.html',
   styleUrls: ['./simulator.component.scss'],
@@ -24,7 +28,8 @@ import { MenuElementModel } from '../../models/menuElement.model'
 })
 export class SimulatorComponent implements OnInit {
 
-  constructor(private ussdAppService: UssdAppService, public dialog: MatDialog, private layoutUtilsSercvice: LayoutUtilsService,) { }
+  constructor(private ussdAppService: UssdAppService, private cd: ChangeDetectorRef,
+    public dialog: MatDialog, private layoutUtilsSercvice: LayoutUtilsService,) { }
   menuElements: any = [];
   ussdUsers: any = [];
   input: any;
@@ -82,6 +87,30 @@ export class SimulatorComponent implements OnInit {
       this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
     });
   }
+
+  openAddMenu(code){
+    const dialogRef = this.dialog.open(AddMenuComponent, { data: {code} },);
+    dialogRef.afterClosed().subscribe(res => {
+      if (!res) {
+        return;
+      }
+      // this.PopulateUsers();
+      this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
+    });
+  }
+
+  openMenu(selector)
+  {
+    if ( this.selectedUser === undefined) {
+      this.layoutUtilsSercvice.showActionNotification
+        ('Please Enter select a user.', MessageType.Create, 10000, true, false, 0, 'top');
+      return;
+
+    }
+    this.input =selector;
+    this.getNextMenu();
+  }
+
   getNextMenu() {
     if (this.input === undefined || this.input === null || this.selectedUser === undefined) {
       this.layoutUtilsSercvice.showActionNotification
@@ -98,6 +127,8 @@ export class SimulatorComponent implements OnInit {
             res.menuElements.forEach(mi => {
               this.menuElements.push(mi);
             });
+        this.cd.detectChanges();
+
           }
         }
         this.input = "";
