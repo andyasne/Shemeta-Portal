@@ -38,6 +38,7 @@ export class AddMenuComponent implements OnInit {
 	parentCode=''
 	// Private properties
 	private componentSubscriptions: Subscription;
+	code: any;
 
 	/**
 	 * Component constructor
@@ -53,7 +54,8 @@ export class AddMenuComponent implements OnInit {
 		private fb: FormBuilder,
 		private store: Store<AppState>,
 		private typesUtilsService: TypesUtilsService) {
-			this.parentCode=data.code;
+			this.parentCode=data.parentCode;
+			this.code = data.code
 	}
 
 	/**
@@ -66,6 +68,7 @@ export class AddMenuComponent implements OnInit {
 	ngOnInit() {
 		this.ussdMenu = new MenuElementModel();
 		this.ussdMenu.menuItem.parentCode= Number.parseInt( this.parentCode);
+		this.ussdMenu.menuItem.code= Number.parseInt( this.code);
 		this.createForm();
 	}
 

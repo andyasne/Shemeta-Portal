@@ -41,8 +41,7 @@ export class SimulatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.PopulateUsers();
-    let randomSessionId = Math.floor(Math.random() * 1000);
-    this.sessionId= randomSessionId.toString();
+
   }
 
 
@@ -74,6 +73,19 @@ export class SimulatorComponent implements OnInit {
       return;
 
     }
+    const randomSessionId = Math.floor(Math.random() * 1000);
+    this.sessionId= randomSessionId.toString();
+    this.input ='0';
+    this.getNextMenu();
+  }
+
+  goBack()
+  {
+    if (this.input === undefined || this.input === null || this.selectedUser === undefined) {
+      this.layoutUtilsSercvice.showActionNotification
+        ('Please Enter an Unput and select a user.', MessageType.Create, 10000, true, false, 0, 'top');
+      return;
+    }
     this.input ='0';
     this.getNextMenu();
   }
@@ -89,14 +101,29 @@ export class SimulatorComponent implements OnInit {
   }
 
   openAddMenu(code){
-    const dialogRef = this.dialog.open(AddMenuComponent, { data: {code} },);
-    dialogRef.afterClosed().subscribe(res => {
-      if (!res) {
-        return;
-      }
-      // this.PopulateUsers();
-      this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
-    });
+    this.ussdAppService.getUssdConfig().pipe(
+			tap(res => {
+
+        let data={
+          code :res[0].nextMenuCode,
+          parentCode:code,
+        }
+      const dialogRef = this.dialog.open(AddMenuComponent, { data },);
+      dialogRef.afterClosed().subscribe(res => {
+        if (!res) {
+          return;
+        }
+        // this.PopulateUsers();
+        this.layoutUtilsSercvice.showActionNotification('Added a New Menu');
+      });
+			}),
+			catchError(err => of(
+			)),
+			finalize(
+				() => { }
+			)
+		).subscribe();
+
   }
 
   openMenu(selector)
