@@ -40,6 +40,7 @@ import { NgbdModalContentComponent } from "./components/menu/NgbdModalContentCom
 import { AddPhoneNumberComponent } from './components/add-phone-number/add-phone-number.component';
 import { AddMenuComponent } from './components/add-menu/add-menu.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { MsgTemplateComponent } from './ussd/msg-template/msg-template.component';
 
 const routes: Routes = [
 	{
@@ -76,13 +77,19 @@ const routes: Routes = [
 				component: UssdConfigComponent
 			}
 
+			,
+			{
+				path: 'msg-template',
+				component: MsgTemplateComponent
+			}
+
 
 		]
 	}
 ];
 
 @NgModule({
-  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent, AddMenuComponent],
+  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent, AddMenuComponent, MsgTemplateComponent],
   imports: [
 	CommonModule,FormsModule,HttpClientModule,
 	MatButtonModule,

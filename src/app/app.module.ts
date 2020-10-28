@@ -96,7 +96,7 @@ export function getHighlightLanguages() {
   return [
     {name: 'typescript', func: typescript},
     {name: 'scss', func: scss},
-    {name: 'xml', func: xml},
+    {name: 'xml', func: xml}, 
     {name: 'json', func: json}
   ];
 }
