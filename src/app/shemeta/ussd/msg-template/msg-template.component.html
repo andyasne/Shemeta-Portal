@@ -84,16 +84,28 @@
 						</mat-checkbox>
 					</mat-cell>
 				</ng-container>
-				<ng-container matColumnDef="_id">
-					<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->
-					<mat-header-cell *matHeaderCellDef mat-sort-header>ID</mat-header-cell>
-					<mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel._id}}</mat-cell>
-				</ng-container>
+		 
+
 				<ng-container matColumnDef="AmharicLabel">
 					<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->
 					<mat-header-cell *matHeaderCellDef mat-sort-header>Amharic Label</mat-header-cell>
 					<mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel.smsLabel.am}}</mat-cell>
 				</ng-container>
+
+				<ng-container matColumnDef="EnglishLabel">
+ 					<mat-header-cell *matHeaderCellDef mat-sort-header>English Label</mat-header-cell>
+					<mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel.smsLabel.en}}</mat-cell>
+				</ng-container>
+
+				<ng-container matColumnDef="AfanOromoLabel">
+					<mat-header-cell *matHeaderCellDef mat-sort-header>Afan Oromo Label</mat-header-cell>
+				   <mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel.smsLabel.oro}}</mat-cell>
+			   </ng-container>
+
+			   <ng-container matColumnDef="TigregnaLabel">
+				<mat-header-cell *matHeaderCellDef mat-sort-header>Tigregna Label</mat-header-cell>
+			   <mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel.smsLabel.tig}}</mat-cell>
+		 	  </ng-container>
 
 				<ng-container matColumnDef="additionalAttributes">
 					<!-- ATTRIBUTE mat-sort-header  for sorting | https://material.angular.io/components/sort/overview -->
@@ -101,34 +113,7 @@
 					<mat-cell *matCellDef="let SMSTemplateModel">{{SMSTemplateModel.additionalAttributes}}</mat-cell>
 				</ng-container>
 
-
-
-
-
-<!--
-				<ng-container matColumnDef="username">
-					<mat-header-cell *matHeaderCellDef mat-sort-header>Username</mat-header-cell>
-					<mat-cell *matCellDef="let user">{{user.username}}</mat-cell>
-				</ng-container>
-
-				<ng-container matColumnDef="email">
-					<mat-header-cell *matHeaderCellDef mat-sort-header class="email-cell">Email</mat-header-cell>
-					<mat-cell *matCellDef="let user" class="email-cell">
-						<a href="user-management/users#" class="font-weight-bold">{{user.email}}</a>
-					</mat-cell>
-				</ng-container>
-
-				<ng-container matColumnDef="fullname">
-					<mat-header-cell *matHeaderCellDef mat-sort-header>Full name</mat-header-cell>
-					<mat-cell *matCellDef="let user">{{user.fullname}}</mat-cell>
-				</ng-container>
-
-				<ng-container matColumnDef="_roles">
-					<mat-header-cell *matHeaderCellDef>Roles</mat-header-cell>
-					<mat-cell *matCellDef="let user">
-				  <span>{{ getUserRolesStr(user) }}</span>
-					</mat-cell>
-				</ng-container> -->
+ 
 
 				<ng-container matColumnDef="actions">
 					<mat-header-cell *matHeaderCellDef>Actions</mat-header-cell>

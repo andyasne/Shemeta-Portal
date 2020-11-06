@@ -64,7 +64,7 @@ export class MenuConfig {
           title: 'SENT MESSAGES',
           root: true,
           icon: 'flaticon-email',
-          page: '/dashboard',
+          page: '/shemeta/sms-sent-messages',
           translate: 'SHEMETA.SENT_MESSAGES',
           bullet: 'dot',
         },

@@ -8,17 +8,17 @@ import { Subscription, Observable, of } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
 import { User, Role } from 'src/app/core/auth';
 import { QueryParamsModel } from 'src/app/core/_base/crud';
-import { SMSTemplateModel } from '../../models/smsTemplate';
+import { SMSMessageModel } from '../../models/smsMessage.model';
 import { SmsServiceService } from '../../services/sms-service.service';
-
 @Component({
-  selector: 'kt-msg-template',
-  templateUrl: './msg-template.component.html',
-  styleUrls: ['./msg-template.component.scss']
+  selector: 'kt-sms-sent-messages',
+  templateUrl: './sms-sent-messages.component.html',
+  styleUrls: ['./sms-sent-messages.component.scss']
 })
-export class MsgTemplateComponent implements OnInit {
-	dataSource: MatTableDataSource<SMSTemplateModel> ;;
-	displayedColumns = ['AmharicLabel','AfanOromoLabel','TigregnaLabel','additionalAttributes' ];
+export class SmsSentMessagesComponent implements OnInit {
+
+	dataSource: MatTableDataSource<SMSMessageModel> ;;
+	displayedColumns = ['Date' ,'From','To','Message','Status'];
 	@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 	@ViewChild('sort1', {static: true}) sort: MatSort;
 	// Filter fields
@@ -35,9 +35,9 @@ export class MsgTemplateComponent implements OnInit {
 
   ngOnInit(): void {
 
-        this.smsServiceService.getTemplate()   .pipe(
+        this.smsServiceService.getSentSMSMessages()   .pipe(
           tap(res => {
-            this.dataSource = new MatTableDataSource<SMSTemplateModel>(res);
+            this.dataSource = new MatTableDataSource<SMSMessageModel>(res);
           }) ,
           catchError(err => of(
             // new QueryResultsModel([], err)
@@ -62,6 +62,5 @@ export class MsgTemplateComponent implements OnInit {
   deleteUser(user){
 
   }
-
 
 }
