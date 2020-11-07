@@ -1,5 +1,7 @@
 import { SelectionModel } from '@angular/cdk/collections';
+import { ChangeDetectorRef } from '@angular/core';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,7 +9,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subscription, Observable, of } from 'rxjs';
 import { catchError, finalize, tap } from 'rxjs/operators';
 import { User, Role } from 'src/app/core/auth';
-import { QueryParamsModel } from 'src/app/core/_base/crud';
+import { LayoutUtilsService, QueryParamsModel } from 'src/app/core/_base/crud';
+import { AddSmsTemplateComponent } from '../../components/add-sms-template/add-sms-template.component';
 import { SMSTemplateModel } from '../../models/smsTemplate';
 import { SmsServiceService } from '../../services/sms-service.service';
 
@@ -31,24 +34,28 @@ export class MsgTemplateComponent implements OnInit {
 
 	// Subscriptions
 	private subscriptions: Subscription[] = [];
-  constructor(private smsServiceService: SmsServiceService,) { }
+  constructor(private smsServiceService: SmsServiceService,private cd: ChangeDetectorRef,
+    public dialog: MatDialog, private layoutUtilsSercvice: LayoutUtilsService,) { }
 
   ngOnInit(): void {
-
-        this.smsServiceService.getTemplate()   .pipe(
-          tap(res => {
-            this.dataSource = new MatTableDataSource<SMSTemplateModel>(res);
-          }) ,
-          catchError(err => of(
-            // new QueryResultsModel([], err)
-            // console.log(err)
-            )),
-          finalize(
-            () => { }
-          )
-
-          ).subscribe();
+        this.populateTemplate();
   }
+  private populateTemplate() {
+    this.smsServiceService.getTemplate().pipe(
+      tap(res => {
+        this.dataSource = new MatTableDataSource<SMSTemplateModel>(res);
+      }),
+      catchError(err => of(
+        // new QueryResultsModel([], err)
+        // console.log(err)
+      )),
+      finalize(
+        () => { }
+      )
+
+    ).subscribe();
+  }
+
   fetchUsers():void{
 
   }
@@ -60,6 +67,31 @@ export class MsgTemplateComponent implements OnInit {
 
   }
   deleteUser(user){
+
+  }
+
+  addSMSTemplate() {
+
+    const dialogRef = this.dialog.open(AddSmsTemplateComponent, { data: {} },);
+    dialogRef.afterClosed().subscribe(res => {
+      if (!res) {
+        return;
+      }
+
+      this.smsServiceService.getTemplate().pipe(
+        tap(res => {
+          this.dataSource = new MatTableDataSource<SMSTemplateModel>(res);
+         }),
+        catchError(err => of(
+
+        )),
+        finalize(
+          () => { }
+        )
+
+      ).subscribe();
+
+    });
 
   }
 

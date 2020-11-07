@@ -22,5 +22,8 @@ export class SmsServiceService {
   getSentSMSMessages(): Observable<any> {
     return this.http.get<any>(sentMessage_url);
   }
-
+  createSMSTemplate(smsTemplateModel:SMSTemplateModel): Observable<SMSTemplateModel> {
+    const httpHeaders = this.httpUtils.getHTTPHeaders();
+    return this.http.post<SMSTemplateModel>('http://localhost:3000/v1/sms/template',smsTemplateModel,{headers: httpHeaders});
+    }
 }

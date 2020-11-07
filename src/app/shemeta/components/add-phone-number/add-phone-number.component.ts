@@ -29,7 +29,7 @@ import { isBoolean } from 'lodash';
   changeDetection: ChangeDetectionStrategy.OnPush,
 	encapsulation: ViewEncapsulation.None
 })
-export class AddPhoneNumberComponent implements OnInit, OnDestroy {
+export class AddPhoneNumberComponent  implements OnInit, OnDestroy {
 	// Public properties
 	ussdUser: UssdUserModel;
 	ussdUserForm: FormGroup;

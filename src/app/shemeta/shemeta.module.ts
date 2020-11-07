@@ -42,6 +42,7 @@ import { AddMenuComponent } from './components/add-menu/add-menu.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { MsgTemplateComponent } from './ussd/msg-template/msg-template.component';
 import { SmsSentMessagesComponent } from './ussd/sms-sent-messages/sms-sent-messages.component';
+import { AddSmsTemplateComponent } from './components/add-sms-template/add-sms-template.component';
 
 const routes: Routes = [
 	{
@@ -85,6 +86,11 @@ const routes: Routes = [
 			}
 			,
 			{
+				path: 'add-sms-template',
+				component: AddSmsTemplateComponent
+			}
+			,
+			{
 				path: 'msg-template',
 				component: MsgTemplateComponent
 			}
@@ -95,7 +101,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent, AddMenuComponent, MsgTemplateComponent, SmsSentMessagesComponent],
+  declarations: [DashboardComponent,MenuComponent, NgbdModalContentComponent,ShemetaComponent, BuilderComponent, SimulatorComponent, UserDataComponent, UssdConfigComponent, USSDMenuDirective, AddPhoneNumberComponent, AddMenuComponent, MsgTemplateComponent, SmsSentMessagesComponent, AddSmsTemplateComponent],
   imports: [
 	CommonModule,FormsModule,HttpClientModule,
 	MatButtonModule,
