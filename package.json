@@ -4,7 +4,7 @@
     "description": "Packages used by Angular",
     "scripts": {
         "ng": "ng",
-        "start": "node  node_modules/@angular/cli/bin/ng serve",
+       "start": "node server.js",
         "build": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",
