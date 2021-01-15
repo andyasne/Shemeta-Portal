@@ -21,7 +21,7 @@ import { SmsServiceService } from '../../services/sms-service.service';
 })
 export class MsgTemplateComponent implements OnInit {
 	dataSource: MatTableDataSource<SMSTemplateModel> ;;
-	displayedColumns = ['AmharicLabel','AfanOromoLabel','TigregnaLabel','additionalAttributes' ];
+	displayedColumns = ['AmharicLabel','EnglishLabel','AfanOromoLabel','TigregnaLabel','additionalAttributes' ];
 	@ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 	@ViewChild('sort1', {static: true}) sort: MatSort;
 	// Filter fields
