@@ -9,24 +9,10 @@ export class MenuConfig {
     aside: {
       self: {},
       items: [
-        {
-          title: 'Dashboard',
-          root: true,
-          icon: 'flaticon2-architecture-and-city',
-          page: '/shemeta/dashboard',
-          translate: 'MENU.DASHBOARD',
-          bullet: 'dot',
-        },
+      
 
         {section: 'USSD Module'},
-        {
-          title: 'BUILDER',
-          root: true,
-          icon: 'flaticon2-graphic-design',
-          page: '/shemeta/builder',
-          translate: 'SHEMETA.BUILDER',
-          bullet: 'dot',
-        },
+      
         {
           title: 'TEST',
           root: true,
@@ -34,23 +20,7 @@ export class MenuConfig {
           page: '/shemeta/simulator',
           translate: 'SHEMETA.SIMULATOR',
           bullet: 'dot',
-        },
-        {
-          title: 'USER DATA',
-          root: true,
-          icon: 'flaticon2-user-1',
-          page: '/shemeta/user-data',
-          translate: 'SHEMETA.USER_DATA',
-          bullet: 'dot',
-        },
-        {
-          title: 'CONFIG',
-          root: true,
-          icon: 'flaticon2-settings',
-          page: '/shemeta/ussd-config',
-          translate: 'SHEMETA.CONFIG_USSD',
-          bullet: 'dot',
-        },
+        } ,
         {section: 'SMS Module'},
         {
           title: 'MESSAGE TEMPLATE',
@@ -67,15 +37,7 @@ export class MenuConfig {
           page: '/shemeta/sms-sent-messages',
           translate: 'SHEMETA.SENT_MESSAGES',
           bullet: 'dot',
-        },
-        {
-          title: 'CONFIG',
-          root: true,
-          icon: 'flaticon2-settings',
-          page: '/dashboard',
-          translate: 'SHEMETA.CONFIG_SMS',
-          bullet: 'dot',
-        },
+        } ,
         {
           title: 'User Management',
           root: true,
